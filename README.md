@@ -1,18 +1,18 @@
-# Wiki AI Detection
+# Wikipedia AI Detection 📄🤖
 
 **Detecting AI-Generated Content in Wikipedia Articles**
 
 This repo provides collection and evaluation code for **"Detecting AI-Generated Content in Wikipedia Articles,"** by **Creston Brooks, Samuel Eggert, and Denis Peskoff**. Presented at **NLP for Wikipedia Workshop, EMNLP 2024**.
 
-### Data Collection (`scraping/`)
+### Data Collection (`scraping/`) 🗃️🔍
 
 The `scraping/` directory contains the code used to collect Wikipedia articles, Reddit comments, and UN press releases for our study.
 
-### Collected Data and Miscellaneous Scripts (`misc/`)
+### Collected Data and Miscellaneous Scripts (`misc/`) 📂✨
 
 For convenience, we provide the collected JSON files corresponding to the Wikipedia articles we gathered and evaluated in August 2024. These files are available in the `misc/` directory. This directory also contains miscellaneous scripts that we used for various data analysis tasks.
 
-### Evaluation Code (`eval/`)
+### Evaluation Code (`eval/`) 🛠️📊
 
 The `eval/` directory includes code for evaluating AI-generated content using the two tools we consider: **Binoculars** and **GPTZero**. 
 
