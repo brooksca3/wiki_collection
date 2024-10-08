@@ -1,4 +1,4 @@
-# Wikipedia AI Detection 📄🤖
+# Wikipedia AI Detection 📄🤖 (repo in the process of being updated!)
 
 **Detecting AI-Generated Content in Wikipedia Articles**
 
