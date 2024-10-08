@@ -20,7 +20,7 @@ The `eval/` directory includes code for evaluating AI-generated content using th
 
   ```bash
   git submodule add https://github.com/ahans30/Binoculars eval/binoculars
-``
+
  It is recommended to use a GPU-enabled environment with enough memory to store the Falcon and Falcon-Instruct models needed for Binoculars to run.
 
 - **`gptzero/`**: To use GPTZero, you will need to obtain your own API key and include it in the script. This file assumes you have already collected Wikipedia data into the expected json format (scraping/wikipedia/recent_wiki_scraper.py)
