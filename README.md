@@ -2,7 +2,7 @@
 
 **Detecting AI-Generated Content in Wikipedia Articles**
 
-This repo provides collection and evaluation code for **"Detecting AI-Generated Content in Wikipedia Articles,"** by **Creston Brooks, Samuel Eggert, and Denis Peskoff**. Presented at **NLP for Wikipedia Workshop @ EMNLP 2024**.
+This repo provides collection and evaluation code for **"Detecting AI-Generated Content in Wikipedia Articles,"** by **Creston Brooks, Samuel Eggert, and Denis Peskoff**. Presented at **NLP for Wikipedia @ EMNLP 2024**.
 
 ### Data Collection (`scraping/`) 🗃️🔍
 
