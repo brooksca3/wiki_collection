@@ -1,8 +1,8 @@
+import os
 import requests
+import tqdm
+import json
 from bs4 import BeautifulSoup
-
-# Define the base URL for the country's press releases
-base_url = "https://afghanistan.un.org/en/press-centre/press-releases?page="
 
 # Define headers to simulate a browser request
 headers = {
@@ -35,8 +35,8 @@ def scrape_all_pages(base_url, output_file):
     with open(output_file, 'w', encoding='utf-8') as file:
         while True:
             # Construct the URL for the current page
-            page_url = f"{base_url}{page}"
-            print(f"Scraping page: {page_url}")
+            page_url = f"{base_url}?page={page}"
+            # print(f"Scraping page: {page_url}")
 
             try:
                 # Send a GET request to the current page
@@ -51,7 +51,7 @@ def scrape_all_pages(base_url, output_file):
 
                 # If no press releases are found, break the loop
                 if not press_releases:
-                    print("No more press releases found.")
+                    # print("No more press releases found.")
                     break
 
                 for press_release in press_releases:
@@ -63,7 +63,7 @@ def scrape_all_pages(base_url, output_file):
 
                     # Check if the URL is absolute or relative
                     if not press_release_url_suffix.startswith('http'):
-                        press_release_url = f'https://afghanistan.un.org{press_release_url_suffix}'
+                        press_release_url = f'{base_url.split("/en/press-centre/press-releases")[0]}{press_release_url_suffix}'
                     else:
                         press_release_url = press_release_url_suffix
 
@@ -88,7 +88,26 @@ def scrape_all_pages(base_url, output_file):
                 break
 
     # Print summary of the scraping process
-    print(f"Total press releases scraped: {total_press_releases}")
+    # print(f"Total press releases scraped for {base_url}: {total_press_releases}")
 
-# Start the scraping process and write to 'press_releases.txt'
-scrape_all_pages(base_url, 'press_releases.txt')
+def scrape_all_press_releases():
+    """
+    Scrape all press releases from the given list of country URLs
+    """
+    # Create a new directory to store all output files
+    output_dir = 'press_releases'
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Load the valid URLs from the JSON file
+    with open('valid_urls.json', 'r') as f:
+        valid_urls = json.load(f)
+
+    # Iterate over all valid URLs
+    pbar = tqdm.tqdm(valid_urls, desc="Scraping all press releases")
+    for url in pbar:
+        country_name = url.split("//")[1].split(".")[0]
+        output_file = os.path.join(output_dir, f'{country_name}_press_releases.txt')
+        # print(f"Starting scrape for {country_name}")
+        scrape_all_pages(url, output_file)
+        # print(f"Finished scrape for {country_name}")
+        # print("\n\n\n")

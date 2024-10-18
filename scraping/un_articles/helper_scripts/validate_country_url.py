@@ -1,14 +1,14 @@
 import requests
-from input_un_urls import input_un_urls
+import json
 from tqdm import tqdm
+from .input_un_urls import input_un_urls  # Use relative import
 
-def check_urls(urls):
+def validate_country_urls(urls):
     invalid_text = "The requested page could not be found."
     results = []
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
-
     for url in tqdm(urls, desc="Checking URLs"):
         try:
             response = requests.get(url, headers=headers)
@@ -18,18 +18,18 @@ def check_urls(urls):
                 else:
                     results.append((url, "Valid"))
             else:
-                print(f"URL: {url} - Response Code: {response.status_code}")  # Log response code
                 results.append((url, "Invalid"))
         except requests.exceptions.RequestException as e:
-            print(f"URL: {url} - Error: {e}")  # Log any request exceptions
             results.append((url, f"Invalid (Error: {e})"))
 
-    return results
+    # Save valid URLs to a JSON file
+    valid_urls = [url for url, status in results if status == "Valid"]
 
-# Example usage
-urls = input_un_urls
+    with open('valid_urls.json', 'w') as f:
+        json.dump(valid_urls, f)
 
-results = check_urls(urls)
+    return valid_urls
 
-for url, status in results:
-    print(f"URL: {url} - Status: {status}")
+# If you want to run this script independently
+if __name__ == "__main__":
+    validate_country_urls(input_un_urls)
