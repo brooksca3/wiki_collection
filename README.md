@@ -14,7 +14,7 @@ For convenience, we provide the collected JSON files corresponding to the Wikipe
 
 ### Evaluation Code (`eval/`) 🛠️📊
 
-The `eval/` directory includes code for evaluating AI-generated content using the two tools we consider: **Binoculars** and **GPTZero**. 
+The `eval/` directory includes code for evaluating AI-generated content using the two tools we consider: **Binoculars** and **GPTZero**.
 
 - **`binoculars/`**: This directory contains evaluation code for using the Binoculars tool. To use it, you will need to add the [Binoculars GitHub repository](https://github.com/ahans30/Binoculars) as a submodule. This can be done with the following command:
 
@@ -25,3 +25,10 @@ The `eval/` directory includes code for evaluating AI-generated content using th
 
 - **`gptzero/`**: To use GPTZero, you will need to obtain your own API key and include it in the script. This file assumes you have already collected Wikipedia data into the expected json format (scraping/wikipedia/recent_wiki_scraper.py)
 
+### Replicating Data Collection
+
+To replicate the data collection process, follow these steps for each category.
+
+#### UN Press Releases
+
+To replicate the UN press release collection, navigate to `scraping/un_articles/` and run `python3 run_un_scrape.py`. This script will download all available UN press releases to a directory called `press_releases`. Please note that this process can take up to 2 hours to complete.
