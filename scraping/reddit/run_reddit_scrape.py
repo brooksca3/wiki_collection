@@ -6,10 +6,10 @@ from datetime import datetime
 # Define the directory and file names
 directory = "kaggle_data"
 file_names = [
-    "reddit_opinion_climate_change.csv",
-    "reddit_opinion_democrats.csv",
-    "reddit_opinion_PSE_ISR.csv",
-    "reddit_opinion_republican.csv"
+    "reddit_opinion_climate_change_sampled_comments.json",
+    "reddit_opinion_democrats_sampled_comments.json",
+    "reddit_opinion_PSE_ISR_sampled_comments.json",
+    "reddit_opinion_republican_sampled_comments.json"
 ]
 
 # Total number of comments to sample
@@ -26,11 +26,13 @@ def is_long_enough(comment):
 
 # Collect all comments into a single DataFrame
 all_comments = pd.DataFrame()
-
 for file_name in file_names:
     file_path = os.path.join(directory, file_name)
     try:
-        df = pd.read_csv(file_path, parse_dates=['created_time'], dtype={'self_text': str})
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+        df = pd.DataFrame(data)
+        df['created_time'] = pd.to_datetime(df['created_time'])
         df = df.dropna(subset=['self_text'])  # Drop rows where 'self_text' is NaN
         df = df[df['self_text'].apply(is_long_enough)]  # Keep only long comments
         df['source'] = file_name  # Add a source column

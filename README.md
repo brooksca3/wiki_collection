@@ -36,3 +36,7 @@ To replicate the Wikipedia article collection, navigate to `scraping/wikipedia/`
 #### UN Press Releases
 
 To replicate the UN press release collection, navigate to `scraping/un_articles/` and run `python3 run_un_scrape.py`. This script will download all available UN press releases to a directory called `press_releases`. Please note that this process can take up to 2 hours to complete.
+
+#### Reddit Comments
+
+To replicate the Reddit comment collection, navigate to `scraping/reddit/` and run `python3 run_reddit_scrape.py`. This script will download a sample of 10000 comments from the kaggle dataset and save them to `scraping/reddit/kaggle_data/sampled_comments.json`. Please note that this process will complete in under 1 minute.
