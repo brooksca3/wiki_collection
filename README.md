@@ -29,6 +29,10 @@ The `eval/` directory includes code for evaluating AI-generated content using th
 
 To replicate the data collection process, follow these steps for each category.
 
+#### Wikipedia Articles
+
+To replicate the Wikipedia article collection, navigate to `scraping/wikipedia/` and run `python3 run_wiki_scrape.py`. This script will download the text of the 1000 most recently edited articles on Wikipedia and save it to a file called `scraped_wiki_articles.json`. Please note that this process can take up to 1 hour to complete.
+
 #### UN Press Releases
 
 To replicate the UN press release collection, navigate to `scraping/un_articles/` and run `python3 run_un_scrape.py`. This script will download all available UN press releases to a directory called `press_releases`. Please note that this process can take up to 2 hours to complete.

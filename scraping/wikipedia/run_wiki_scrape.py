@@ -92,10 +92,10 @@ def main():
             })
         time.sleep(random.uniform(0.5, 1.5))  # Random delay between article scrapes
 
-    with open('scraped_recent_articles.json', 'w', encoding='utf-8') as f:
+    with open('scraped_wiki_articles.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
-    print(f"Scraped data has been saved to 'scraped_recent_articles.json'")
+    print(f"Scraped data has been saved to 'scraped_wiki_articles.json'")
 
 if __name__ == "__main__":
     main()
