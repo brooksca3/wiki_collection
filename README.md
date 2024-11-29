@@ -1,8 +1,6 @@
-# Wikipedia AI Detection 📄🤖 (repo in the progress!)
+**The Rise of AI-Generated Content in Wikipedia**
 
-**Detecting AI-Generated Content in Wikipedia Articles**
-
-This repo provides collection and evaluation code for **"Detecting AI-Generated Content in Wikipedia Articles,"** by **Creston Brooks, Samuel Eggert, and Denis Peskoff**. Presented at **NLP for Wikipedia @ EMNLP 2024**.
+This repo provides collection and evaluation code for **"The Rise of AI-Generated Content in Wikipedia,"** by **Creston Brooks, Samuel Eggert, and Denis Peskoff**. Presented at **[NLP for Wikipedia @ EMNLP 2024](https://aclanthology.org/2024.wikinlp-1.12)**.
 
 ### Data Collection (`scraping/`) 🗃️🔍
 
@@ -40,3 +38,28 @@ To replicate the UN press release collection, navigate to `scraping/un_articles/
 #### Reddit Comments
 
 To replicate the Reddit comment collection, navigate to `scraping/reddit/` and run `python3 run_reddit_scrape.py`. This script will download a sample of 10000 comments from the kaggle dataset and save them to `scraping/reddit/kaggle_data/sampled_comments.json`. Please note that this process will complete in under 1 minute.
+
+### 📄 Citation
+
+If you find this work useful or want to reference it, please cite:
+
+@inproceedings{brooks-etal-2024-rise,
+    title = "The Rise of {AI}-Generated Content in {W}ikipedia",
+    author = "Brooks, Creston  and
+      Eggert, Samuel  and
+      Peskoff, Denis",
+    editor = "Lucie-Aim{\'e}e, Lucie  and
+      Fan, Angela  and
+      Gwadabe, Tajuddeen  and
+      Johnson, Isaac  and
+      Petroni, Fabio  and
+      van Strien, Daniel",
+    booktitle = "Proceedings of the First Workshop on Advancing Natural Language Processing for Wikipedia",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.wikinlp-1.12",
+    doi = "10.18653/v1/2024.wikinlp-1.12",
+    pages = "67--79"
+}
