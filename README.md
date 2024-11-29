@@ -1,4 +1,4 @@
-**The Rise of AI-Generated Content in Wikipedia**
+# The Rise of AI-Generated Content in Wikipedia 📄🤖
 
 This repo provides collection and evaluation code for **"The Rise of AI-Generated Content in Wikipedia,"** by **Creston Brooks, Samuel Eggert, and Denis Peskoff**. Presented at **[NLP for Wikipedia @ EMNLP 2024](https://aclanthology.org/2024.wikinlp-1.12)**.
 
