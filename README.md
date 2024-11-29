@@ -42,7 +42,7 @@ To replicate the Reddit comment collection, navigate to `scraping/reddit/` and r
 ### 📄 Citation
 
 If you find this work useful or want to reference it, please cite:
-
+```bibtex
 @inproceedings{brooks-etal-2024-rise,
     title = "The Rise of {AI}-Generated Content in {W}ikipedia",
     author = "Brooks, Creston  and
@@ -63,3 +63,4 @@ If you find this work useful or want to reference it, please cite:
     doi = "10.18653/v1/2024.wikinlp-1.12",
     pages = "67--79"
 }
+```
